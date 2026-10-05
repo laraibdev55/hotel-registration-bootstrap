@@ -1,0 +1,158 @@
+/* General Page Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Changed background to a warm beige */
+    background-color: #f5f0eb; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+/* Card Container */
+.card-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 550px;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #2d232e;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Profile Image */
+.profile-section {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4a154b; /* Matched to dark purple theme */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+.table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #faf8f5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+th {
+    background-color: #4a154b; /* Dark purple table header */
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f2ece6;
+}
+
+/* Form Group Controls */
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white
+    margin-bottom: 0.4rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1.5px solid #d1c7bd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    outline: none;
+    background-color: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #4a154b; /* Dark purple highlight on click */
+    box-shadow: 0 0 0 3px rgba(74, 21, 75, 0.2);
+}
+
+.checkbox-group,
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-top: 0.25rem;
+}
+
+.checkbox-group label,
+.radio-group label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: #4a154b; /* Dark Purple */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+    background-color: #350d36; /* Slightly darker purple on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 21, 75, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
