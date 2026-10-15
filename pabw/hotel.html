@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawaii Hotel</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("css/Hotel.jpg.webp");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            background-color: #6f4e37 !important;
+        }
+
+        .card-header {
+            background-color: #6f4e37 !important;
+        }
+
+        .btn-primary {
+            background-color: #6f4e37 !important;
+            border-color: #6f4e37 !important;
+        /* } */
+
+        /* Styling for dynamic room cards */
+        .card-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card-list .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px 18px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #6f4e37;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Kawaii Hotel</a>
+            <div>
+                <a class="text-white text-decoration-none me-3" href="#">Home</a>
+                <a class="text-white text-decoration-none me-3" href="#">Rooms</a>
+                <a class="text-white text-decoration-none" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mt-5">
+
+        <!-- HOTEL INTRODUCTION -->
+        <div class="text-center mb-4 text-white">
+            <h1 class="fw-bold">Welcome to Kawaii Hotel</h1>
+            <p id="hotel-message" class="fs-5">Find your perfect room with us.</p>
+            <button id="book-button" class="btn btn-light btn-sm">Book a Room</button>
+        </div>
+
+        <!-- ==========================================
+             P9 WORKSHEET SECTION: ROOM FILTER & LIST
+        =========================================== -->
+        <div class="card shadow mb-5 p-4">
+            <h3 class="mb-3 text-dark">Available Rooms</h3>
+
+            <!-- Sheet C: Filter Buttons -->
+            <div id="filter" class="mb-3 btn-group" role="group">
+                <button type="button" class="btn btn-outline-primary active" data-category="all">All</button>
+                <button type="button" class="btn btn-outline-primary" data-category="single">Single</button>
+                <button type="button" class="btn btn-outline-primary" data-category="double">Double</button>
+                <button type="button" class="btn btn-outline-primary" data-category="deluxe">Deluxe</button>
+                <button type="button" class="btn btn-outline-primary" data-category="family">Family</button>
+            </div>
+
+            <!-- Sheet D: Empty State Message -->
+            <p id="empty-msg" class="text-danger fw-bold" hidden>No rooms found in this category.</p>
+
+            <!-- Sheet B: Dynamic Card Container -->
+            <ul id="list" class="card-list"></ul>
+        </div>
+
+        <!-- ==========================================
+             REGISTRATION FORM (Sheet D)
+        =========================================== -->
+        <div class="card shadow">
+            <div class="card-header text-white">
+                <h2 class="mb-0">Hotel Registration</h2>
+            </div>
+
+            <div class="card-body">
+                <form id="contact-form">
+
+                    <!-- FULL NAME -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                    </div>
+
+                    <!-- PHONE -->
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" placeholder="Enter your phone number">
+                    </div>
+
+                    <!-- CHECK IN -->
+                    <div class="mb-3">
+                        <label class="form-label">Check-in Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+
+                    <!-- CHECK OUT -->
+                    <div class="mb-3">
+                        <label class="form-label">Check-out Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+
+                    <!-- NUMBER OF GUESTS -->
+                    <div class="mb-3">
+                        <label class="form-label">Number of Guests</label>
+                        <input type="number" class="form-control" min="1" max="10" placeholder="Enter number of guests">
+                    </div>
+
+                    <!-- ROOM TYPE -->
+                    <div class="mb-3">
+                        <label class="form-label">Room Type</label>
+                        <select id="roomType" class="form-select">
+                            <option selected>Select a room</option>
+                            <option>Single Room</option>
+                            <option>Double Room</option>
+                            <option>Deluxe Room</option>
+                            <option>Family Room</option>
+                        </select>
+                    </div>
+
+                    <!-- SPECIAL REQUEST -->
+                    <div class="mb-3">
+                        <label class="form-label">Special Request</label>
+                        <textarea class="form-control" rows="4" placeholder="Enter any special request"></textarea>
+                    </div>
+
+                    <!-- PAYMENT METHOD -->
+                    <div class="mb-3">
+                        <label class="form-label">Payment Method</label>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment" id="cash">
+                                <label class="form-check-label" for="cash">Cash</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment" id="card">
+                                <label class="form-check-label" for="card">Credit Card</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BUTTON -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Register Now</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <p class="mb-0">© 2026 Kawaii Hotel. All Rights Reserved.</p>
+    </footer>
+
+    <!-- MODULE SCRIPTS -->
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/dom.js"></script>
+
+</body>
+</html>
